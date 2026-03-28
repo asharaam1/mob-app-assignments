@@ -27,6 +27,7 @@ export default function RootLayout() {
         <Stack.Screen name="stForm" options={{ headerTitle: "Student Form" }} />
         <Stack.Screen name="noticeBoard" options={{ headerTitle: "Notice Board" }} />
         <Stack.Screen name="darkLightMode" options={{ headerTitle: "Dark/Light Mode" }} />
+        <Stack.Screen name="itemQuantity" options={{ headerTitle: "Item Quantity" }} />
       </Stack>
       {/* <StatusBar style="auto" /> */}
     </ThemeProvider>
