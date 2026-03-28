@@ -11,10 +11,12 @@ import {
   Platform,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { useRouter } from "expo-router";
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
+  const router = useRouter();
 
   const addTask = () => {
     if (newTask.trim() === "") {
@@ -92,7 +94,7 @@ const TodoList = () => {
       <View style={styles.footer}>
         <TouchableOpacity
           style={styles.btn}
-          onPress={() => Alert.alert("Next button pressed")}
+          onPress={() => router.push("/stForm")}
         >
           <Text style={styles.btnText}>Next</Text>
         </TouchableOpacity>
