@@ -1,0 +1,28 @@
+{
+  "notices": [
+    {
+      "id": 1,
+      "title": "Mid-Semester Examination Schedule",
+      "content": "Mid-semester exams will begin on April 15, 2026. Detailed seating arrangement will be announced soon.",
+      "category": "Exam",
+      "for": "All Students",
+      "createdAt": "2026-03-25T09:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Campus Placement Drive",
+      "content": "Top-tier companies are visiting campus for summer internships. Register by March 30.",
+      "category": "Placement",
+      "for": "Final Year Students",
+      "createdAt": "2026-03-27T10:30:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Library Closure Notice",
+      "content": "Library will remain closed on Friday for maintenance.",
+      "category": "Administration",
+      "for": "All Faculty and Students",
+      "createdAt": "2026-03-28T14:00:00Z"
+    }
+  ]
+}

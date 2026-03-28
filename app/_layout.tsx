@@ -25,8 +25,10 @@ export default function RootLayout() {
           options={{ presentation: "modal", title: "Modal" }}
         />
         <Stack.Screen name="stForm" options={{ headerTitle: "Student Form" }} />
+        <Stack.Screen name="noticeBoard" options={{ headerTitle: "Notice Board" }} />
+        <Stack.Screen name="darkLightMode" options={{ headerTitle: "Dark/Light Mode" }} />
       </Stack>
-      <StatusBar style="auto" />
+      {/* <StatusBar style="auto" /> */}
     </ThemeProvider>
   );
 }

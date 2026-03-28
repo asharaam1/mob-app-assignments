@@ -95,7 +95,7 @@ const StudentForm = () => {
         <View style={styles.footer}>
           <TouchableOpacity
             style={styles.btn}
-            onPress={() => router.push("/assignments")}
+            onPress={() => router.push("/noticeBoard")}
           >
             <Text style={styles.btnText}>Next</Text>
           </TouchableOpacity>

@@ -1,0 +1,2 @@
+https://mocki.io/fake-json-api
+i use this above web to convert my data into restful api 
