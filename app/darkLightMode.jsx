@@ -38,7 +38,7 @@ const DarkModeToggle = () => {
 
   return (
     <SafeAreaView style={[styles.container, themeContainer]}>
-      <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
+      {/* <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content" } /> */}
 
       <View style={styles.content}>
         <Text style={[styles.header, themeText]}>
