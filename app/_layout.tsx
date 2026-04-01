@@ -28,6 +28,7 @@ export default function RootLayout() {
         <Stack.Screen name="noticeBoard" options={{ headerTitle: "Notice Board" }} />
         <Stack.Screen name="darkLightMode" options={{ headerTitle: "Dark/Light Mode" }} />
         <Stack.Screen name="itemQuantityCounter" options={{ headerTitle: "Item Quantity" }} />
+        <Stack.Screen name="assignments" options={{ headerTitle: "Todo App" }} />
       </Stack>
       {/* <StatusBar style="auto" /> */}
     </ThemeProvider>
