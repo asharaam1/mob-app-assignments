@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import ItemCounter from "@/components/assignment/ItemCounter";
+import ItemCounter from "@/components/assignment/ItemCounter"; // Logical component for quantity counter
 
 const PRODUCTS = [
   {
@@ -163,9 +163,9 @@ const FoodMenu = () => {
       <View style={styles.footer}>
         <TouchableOpacity
           style={styles.nextBtn}
-          onPress={() => router.push("/(tabs)")}
+          onPress={() => router.push("/fitnessApp")}
         >
-          <Text style={styles.nextText}>Home</Text>
+          <Text style={styles.nextText}>Next</Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -33,7 +33,7 @@ export default function HomeScreen() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.welcomeBox}>
-        <Text style={styles.greeting}>Hello, Student!</Text>
+        <Text style={styles.greeting}>Hello, Asha!</Text>
         <Text style={styles.subGreeting}>Welcome back to your portal.</Text>
       </View>
 
