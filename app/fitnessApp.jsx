@@ -73,9 +73,9 @@ const CountdownTimer = () => {
       <View style={styles.footer}>
         <TouchableOpacity
           style={styles.nextBtn}
-          onPress={() => router.push("/")}
+          onPress={() => router.push("/profileScreen")}
         >
-          <Text style={styles.nextBtnText}>Home</Text>
+          <Text style={styles.nextBtnText}>Next</Text>
         </TouchableOpacity>
       </View>
     </View>
