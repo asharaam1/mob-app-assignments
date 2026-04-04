@@ -24,7 +24,7 @@ export default function HomeScreen() {
     },
     {
       label: "Assignments",
-      value: "05",
+      value: "15",
       icon: "document-text",
       link: "/assignments",
     },

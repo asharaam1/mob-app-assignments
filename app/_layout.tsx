@@ -28,8 +28,12 @@ export default function RootLayout() {
         <Stack.Screen name="noticeBoard" options={{ headerTitle: "Notice Board" }} />
         <Stack.Screen name="darkLightMode" options={{ headerTitle: "Dark/Light Mode" }} />
         <Stack.Screen name="itemQuantityCounter" options={{ headerTitle: "Item Quantity" }} />
-        <Stack.Screen name="assignments" options={{ headerTitle: "Todo App" }} />
+        <Stack.Screen name="todoApp" options={{ headerTitle: "Todo App" }} />
         <Stack.Screen name="fitnessApp" options={{ headerTitle: "Countdown Timer" }} />
+        <Stack.Screen name="profileScreen" options={{ headerTitle: "Profiles" }} />
+        <Stack.Screen name="searchProducts" options={{ headerTitle: "Search Products" }} />
+        <Stack.Screen name="multiStepForm" options={{ headerTitle: "Multi-Step Form" }} />
+        <Stack.Screen name="assignments" options={{ headerTitle: "Assignments" }} />
       </Stack>
       {/* <StatusBar style="auto" /> */}
     </ThemeProvider>

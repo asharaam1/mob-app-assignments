@@ -1,179 +1,137 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   View,
   Text,
+  StyleSheet,
   FlatList,
   TouchableOpacity,
-  TextInput,
-  StyleSheet,
-  Alert,
-  KeyboardAvoidingView,
-  Platform,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
-const TodoList = () => {
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState("");
+const ASSIGNMENTS = [
+  { id: "1", title: "To-Do List App", route: "/todoApp" },
+  { id: "2", title: "Student Registration Form", route: "/stForm" },
+  { id: "3", title: "Notice Board Screen", route: "/noticeBoard" },
+  { id: "4", title: "Dark Mode Toggle", route: "/darkLightMode" },
+  { id: "5", title: "Item Quantity Counter", route: "/itemQuantityCounter" },
+  { id: "6", title: "Student Portal Tab Navigation", route: "/(tabs)" },
+  { id: "7", title: "Countdown Timer", route: "/fitnessApp" },
+  { id: "8", title: "Profile Card Component", route: "/profileScreen" },
+  { id: "9", title: "Real-Time Search Bar", route: "/searchProducts" },
+  { id: "10", title: "Multi-Step Application Form", route: "/multiStepForm" },
+  { id: "11", title: "Student Marks Analyser", route: "/marksAnalyser" },
+  { id: "12", title: "Password Strength Checker", route: "/passwordChecker" },
+  { id: "13", title: "Book List Sorter", route: "/bookSorter" },
+  { id: "14", title: "Quiz Score Calculator", route: "/quizApp" },
+  { id: "15", title: "Bill Splitting Calculator", route: "/billSplitter" },
+];
+
+export default function AssignmentsScreen() {
   const router = useRouter();
 
-  const addTask = () => {
-    if (newTask.trim() === "") {
-      Alert.alert("Please enter a task");
-      setNewTask("");
-      return;
-    }
-    const newItem = {
-      id: Date.now().toString(),
-      title: newTask,
-      completed: false,
-    };
-    setTasks((prev) => [...prev, newItem]);
-    // setTasks((prev) => [newItem, ...prev]);
-    setNewTask("");
-  };
-
-  const toggleTask = (id) => {
-    setTasks((prev) =>
-      prev.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task,
-      ),
-    );
-  };
-
-  const renderTask = ({ item }) => (
+  const renderItem = ({ item }) => (
     <TouchableOpacity
-      style={styles.taskRow}
-      onPress={() => toggleTask(item.id)}
+      style={styles.card}
+      onPress={() => router.push(item.route)}
+      activeOpacity={0.7}
     >
-      <Ionicons
-        name={item.completed ? "checkbox" : "square-outline"}
-        size={24}
-        color="#6f2525"
-        style={{ marginRight: 10 }}
-      />
-      <Text style={[styles.taskText, item.completed && styles.completedText]}>
-        {item.title}
-      </Text>
+      <View style={styles.cardContent}>
+        <View style={styles.iconContainer}>
+          <Text style={styles.idText}>{item.id}</Text>
+        </View>
+        <Text style={styles.assignmentTitle}>{item.title}</Text>
+      </View>
+      <Ionicons name="chevron-forward" size={20} color="#6f2525" />
     </TouchableOpacity>
   );
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.container}
-    >
-      <Text style={styles.header}>TODO APP</Text>
-
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Enter new task..."
-          value={newTask}
-          onChangeText={setNewTask}
-          onSubmitEditing={addTask}
-          returnKeyType="done" //i.e: "next" => UI improve
-        />
-        <TouchableOpacity style={styles.btn} onPress={addTask}>
-          <Text style={styles.btnText}>Add</Text>
-        </TouchableOpacity>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>Assignments Hub</Text>
+        <Text style={styles.headerSubtitle}>BBSUL Student Portal Tasks</Text>
       </View>
 
-      <View style={styles.taskContainer}>
-        <Text style={styles.taskHeader}>Your Tasks</Text>
-        <FlatList
-          data={tasks}
-          keyExtractor={(item) => item.id}
-          renderItem={renderTask}
-          contentContainerStyle={{ paddingBottom: 40 }}
-          showsVerticalScrollIndicator={false}
-        />
-      </View>
-
-      <View style={styles.footer}>
-        <TouchableOpacity
-          style={styles.btn}
-          onPress={() => router.push("/stForm")}
-        >
-          <Text style={styles.btnText}>Next</Text>
-        </TouchableOpacity>
-      </View>
-    </KeyboardAvoidingView>
+      <FlatList
+        data={ASSIGNMENTS}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+        contentContainerStyle={styles.listPadding}
+        showsVerticalScrollIndicator={false}
+      />
+    </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 50,
-    paddingHorizontal: 20,
     backgroundColor: "#c1a864",
   },
   header: {
-    fontSize: 24,
-    fontWeight: "bold",
-    alignSelf: "center",
-    marginBottom: 20,
-    color: "#6f2525",
-  },
-  inputContainer: {
-    flexDirection: "row",
-    gap: 10,
-    marginBottom: 15,
-    alignItems: "center",
-  },
-  input: {
-    flex: 1,
-    height: 40,
-    borderWidth: 2,
-    borderColor: "#6f2525",
-    paddingHorizontal: 15,
-    borderRadius: 5,
-    backgroundColor: "rgba(255,255,255,0.2)",
-  },
-  btn: {
+    paddingTop: 60,
     paddingHorizontal: 20,
-    height: 40,
+    paddingBottom: 25,
+    backgroundColor: "#6f2525",
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+    elevation: 8,
+  },
+  headerTitle: {
+    fontSize: 26,
+    fontWeight: "bold",
+    color: "#fff",
+    textAlign: "center",
+  },
+  headerSubtitle: {
+    fontSize: 14,
+    color: "#c1a864",
+    textAlign: "center",
+    marginTop: 4,
+    fontWeight: "500",
+  },
+  listPadding: {
+    padding: 20,
+    paddingBottom: 40,
+  },
+  card: {
+    backgroundColor: "#fff",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: 16,
+    borderRadius: 12,
+    marginBottom: 12,
+    elevation: 3,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+  },
+  cardContent: {
+    flexDirection: "row",
+    alignItems: "center",
+    flex: 1,
+  },
+  iconContainer: {
+    width: 32,
+    height: 32,
+    borderRadius: 8,
     backgroundColor: "#6f2525",
     justifyContent: "center",
-    borderRadius: 5,
-  },
-  btnText: {
-    color: "white",
-    fontWeight: "bold",
-  },
-  taskContainer: {
-    flex: 1,
-    marginTop: 10,
-  },
-  taskHeader: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#6f2525",
-    borderBottomWidth: 1,
-    borderColor: "#6f2525",
-    marginBottom: 10,
-    paddingBottom: 5,
-  },
-  taskRow: {
-    flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 10,
+    marginRight: 12,
   },
-  taskText: {
-    fontSize: 16,
-    color: "#333",
+  idText: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 13,
   },
-  completedText: {
-    textDecorationLine: "line-through",
-    color: "#666",
-  },
-  footer: {
-    paddingVertical: 20,
-    flexDirection: "row",
-    justifyContent: "flex-end",
+  assignmentTitle: {
+    fontSize: 15,
+    fontWeight: "600",
+    color: "#4a1919",
+    flex: 1,
   },
 });
-
-export default TodoList;
