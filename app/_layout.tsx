@@ -34,6 +34,11 @@ export default function RootLayout() {
         <Stack.Screen name="searchProducts" options={{ headerTitle: "Search Products" }} />
         <Stack.Screen name="multiStepForm" options={{ headerTitle: "Multi-Step Form" }} />
         <Stack.Screen name="assignments" options={{ headerTitle: "Assignments" }} />
+        <Stack.Screen name="marksAnalyser" options={{ headerTitle: "Marks Analyser" }} />
+        <Stack.Screen name="passwordChecker" options={{ headerTitle: "Password Checker" }} />
+        <Stack.Screen name="bookSorter" options={{ headerTitle: "Book Sorter" }} />
+        <Stack.Screen name="quizApp" options={{ headerTitle: "Quiz App" }} />
+        <Stack.Screen name="billSplitter" options={{ headerTitle: "Bill Splitter" }} />
       </Stack>
       {/* <StatusBar style="auto" /> */}
     </ThemeProvider>
