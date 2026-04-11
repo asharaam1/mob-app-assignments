@@ -109,7 +109,7 @@ const ProfessionalSearch = () => {
       <View style={styles.footer}>
         <TouchableOpacity
           style={styles.nextBtn}
-          onPress={() => router.push("/jobPortal")}
+          onPress={() => router.push("/multiStepForm")}
         >
           <Text style={styles.nextText}>Next</Text>
         </TouchableOpacity>
